@@ -1,0 +1,47 @@
+RewriteEngine On
+#RewriteBase /cms
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.+)$ index.php?path=$1 [QSA,L]
+#RewriteRule codex codex.php [L]
+#IndexIgnore *
+#gzip 
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+#gzip2
+#AddOutputFilterByType DEFLATE text/plain
+#AddOutputFilterByType DEFLATE text/html
+#AddOutputFilterByType DEFLATE text/xml
+#AddOutputFilterByType DEFLATE text/css
+#AddOutputFilterByType DEFLATE application/xml
+#AddOutputFilterByType DEFLATE application/xhtml+xml
+#AddOutputFilterByType DEFLATE application/rss+xml
+#AddOutputFilterByType DEFLATE application/javascript
+#AddOutputFilterByType DEFLATE application/x-javascript
+
+#addfile types
+AddType application/x-httpd-php .js
+AddType application/x-httpd-php .css
+AddType application/x-httpd-php .call
+AddType application/x-httpd-php .con
+AddType application/x-httpd-php .codex
+#Alternate default index page
+DirectoryIndex codex.php
+
+#change to your site name
+ErrorDocument 400 http://localhost/codex/ErrorPage.php?e=400
+ErrorDocument 401 http://localhost/codex/ErrorPage.php?e=401
+ErrorDocument 403 http://localhost/codex/ErrorPage.php?e=403
+ErrorDocument 404 http://localhost/codex/ErrorPage.php?e=404
+ErrorDocument 500 http://localhost/codex/ErrorPage.php?e=500
+ErrorDocument 502 http://localhost/codex/ErrorPage.php?e=502
+ErrorDocument 504 http://localhost/codex/ErrorPage.php?e=504

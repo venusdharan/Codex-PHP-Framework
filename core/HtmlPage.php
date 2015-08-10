@@ -55,7 +55,14 @@ class HtmlPage {
     public function add_body($content) {
         $this->body['objects'][] = $content;
     }
-
+    public function clear_body()
+    {
+        for($i = 0 ; $i < count($this->body['objects']) ; $i++ )
+        {
+            echo $this->body['objects'][$i].'</br>';
+            unset($this->body['objects'][$i]);
+        }
+    }
     public function add_body_script($content) {
         $this->body['scripts'][] = $content;
     }
@@ -63,7 +70,9 @@ class HtmlPage {
         $this->body['script_string'][] = $content;
     }
     public function get_page() {
+        
         $libb ='';
+        /*
         echo $LIB;
         foreach($this->lib as $libname)
         {
@@ -73,9 +82,9 @@ class HtmlPage {
             }
            $libb =  $LIB[$libname]['pre'];
         }
+        */
         
-        
-        
+        //print_r($Library);
         
         $c_styles = count($this->head['styles']);
         $c_scripts = count($this->head['scripts']);
@@ -116,7 +125,7 @@ class HtmlPage {
             $b_objects .= $this->body['objects'][$i]."\n";
         }
 
-        $html = "
+$html = "
 <html>
 <head>
 <title>$this->title</title>

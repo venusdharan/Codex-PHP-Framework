@@ -18,12 +18,18 @@ class NavigationManager {
     }
     function navigate()
     {
-        if(isset($_POST['operation']))
+        
+        foreach($_GET as $key => $value)
         {
-            if($_POST['operation'] != '' || $_POST['operation'] != null)
-            {
-                
-            }
+                //echo $key.$value;
+                if($key == 'page')
+                {
+                    include_once "./Pages/$value.php";
+                }
+                if($key == 'error')
+                {
+                    //echo $value;
+                }
         }
     }
     

@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
- $LIB = array(
+ $Library = array(
     
         'bootstarp' => array(
         'js' => './UI/bootstrap/js/bootstrap.min.js',
@@ -13,15 +13,16 @@
         'theme' => './UI/bootstrap/css/bootstrap-theme.min.css',
         'pre' => 'jquery',
         'priority' => 'body'
-    ),
-    array(
+        ),
+    
         'jquery' => array(
             'js' => '.UI/jquery/js/jquery.min.js',
             'css'=> '',
             'pre'=> 'none',
+            'theme'=>'none',
             'priority'=>'body'
         )
-    )
+    
     
 );
 

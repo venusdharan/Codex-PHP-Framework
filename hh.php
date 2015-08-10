@@ -21,5 +21,5 @@ $page->set_title('hello');
 $page->add_meta('http-equiv="X-UA-Compatible" content="IE=edge"');
 $page->add_lib('jquery');
 $page->add_script("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js");
-
+$page->clear_body();
 $page->get_page();

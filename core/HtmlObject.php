@@ -27,6 +27,10 @@ class HtmlObject {
 		   
 		}
                 */
+                /*
+                 * 
+                 * set the type of object
+                 */
                 function set_type($type)
                 {
                    $this->type = $type; 
