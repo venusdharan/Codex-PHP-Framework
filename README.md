@@ -5,7 +5,7 @@ Dynamic loading and create dynamic javascript and css as PHP parses these file t
 <h1>Intstalling</h1>
 copy all files to working directory
 <h2>Example page setup</h2>
-Open Pages diectory and add edit test.php page if needed.</br>
+Open Pages directory and add edit test.php page if needed.</br>
 All pages to shown should be placed in this directory.</br>
 Open bowser and add query parameter ?page=test</br>
 <h2>Index page setup</h2>
